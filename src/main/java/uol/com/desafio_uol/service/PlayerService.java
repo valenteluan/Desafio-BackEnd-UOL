@@ -8,6 +8,8 @@ import uol.com.desafio_uol.domain.dtos.PlayerDto;
 import uol.com.desafio_uol.infra.CodinameHandler;
 import uol.com.desafio_uol.repositories.PlayerRepository;
 
+import java.util.List;
+
 @Service
 public class PlayerService {
 
@@ -28,5 +30,7 @@ public class PlayerService {
         return handler.findCodiname(groupType);
     }
 
-
+    public List<Player> getAllPlayers() {
+        return repository.findAll();
+    }
 }
