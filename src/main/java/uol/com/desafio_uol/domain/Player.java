@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import uol.com.desafio_uol.domain.dtos.PlayerDto;
 
 @Entity(name = "players")
 @Table(name = "players")
@@ -24,4 +25,10 @@ public class Player {
     private String codiname;
     private GroupType groupType;
 
+    public Player(PlayerDto dto) {
+        this.name = dto.name();
+        this.email = dto.email();
+        this.phoneNumber = dto.phoneNumber();
+        this.groupType = dto.groupType();
+    }
 }
